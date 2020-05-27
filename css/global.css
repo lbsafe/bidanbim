@@ -1,0 +1,588 @@
+.locationArea > div h2,
+.listPage div h2,
+.historyArea div h2,
+.mediaArea div ul li figure figcaption dl dt,
+.headOfficeArea h2,
+.mediaArea div h2,
+.detailArea > div div h3,
+header > div div.menuPage ul li h3 a{
+    font-family: Song Myung;
+}
+.historyArea ul li,
+.historyArea div > p,
+.genderArea ul li figure figcaption dl dt,
+.genderArea ul li figure figcaption dl dd,
+.homeArea ul li h3,
+.homeArea ul li p,
+.mediaArea div ul li figure figcaption dl dd,
+.mediaArea div:first-of-type h2 small,
+.locationArea,
+.listPage div nav ul li a,
+.listPage div > ul li a,
+.detailArea > div div p,
+.detailArea > div > p,
+header > div div.searchPage form input:first-of-type,
+header > div div.menuPage ul li > a,
+footer {
+    font-family: Nanum Myeongjo;
+}
+.headOfficeArea div,
+.genderArea div,
+.mediaArea > div,
+.historyArea,
+.locationArea > div,
+.listPage div,
+.detailArea > div,
+footer div {
+    width: 84.22%;
+    margin: 0 auto;
+}
+header {
+    width: 100%;
+    position: fixed;
+    padding: 43px 0 55px;
+    z-index: 1000;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+header > div {
+    width: 95%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+header > div:after {
+    content: '';
+    display: block;
+    visibility: hidden;
+    clear: both;
+}
+header > div h1 a {
+    float: left;
+    width: 242px;
+    text-indent: -9999px;
+    background: url("../images/logo.png") no-repeat;
+    background-size: contain;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-in-out;
+}
+header > div input[id="searchIcon"],
+header > div input[id="menuIcon"] {
+    display: none;
+}
+header > div input[id="searchIcon"]+label,
+header > div input[id="menuIcon"]+label{
+    position: absolute;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+}
+header > div input[id="searchIcon"]+label span,
+header > div input[id="menuIcon"]+label span{
+    position: absolute;
+    background: none;
+    color: #50514f;
+    border: 0;
+    z-index: 2;
+}
+header > div div.searchPage{
+    width: 100%;
+    left: 0;
+    background: #fff;
+    position: fixed;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+}
+header > div input[id="searchIcon"]:checked+label+div.searchPage {
+    top: 0;
+}
+header > div div.searchPage form {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    transform: translateY(-50%);
+}
+header > div div.searchPage form input:first-of-type{
+    width: 60vw;
+    padding-bottom: 0;
+    border-bottom: 1px solid #50514f;
+    color: #50514f;
+}
+header > div div.searchPage form input:last-of-type{
+    background: none;
+    color: #50514f;
+    cursor: pointer;
+}
+header > div div.menuPage {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: -100%;
+    position: fixed;
+    transition-property: all;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+    z-index: 1;
+}
+header > div input[id="menuIcon"]:checked+label+div.menuPage {
+    right: 0%;
+}
+header > div div.menuPage ul {
+    background: url("../images/bg_03.jpg");
+    background-size: cover;
+    float: left;
+    height: 100%;
+    width: 100%;
+    padding-top: 10%;
+}
+header > div div.menuPage ul li h3 a{
+    color: #63474d;
+    font-weight: normal;
+    text-decoration: none;
+}
+header > div div.menuPage ul li > a{
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    color: #50514f;
+    text-decoration: none;
+}
+header.headerChange{
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+footer{
+    background: url("../images/bg_footer.jpg");
+    width: 100%;
+    box-sizing: border-box;
+}
+footer div {
+    box-sizing: border-box;
+    position: relative;
+}
+footer div address {
+    display: inline-block;
+    font-style: normal;
+}
+footer div p:last-of-type{
+    border-top: 1px solid #50514f;
+    box-sizing: border-box;
+}
+footer div p {
+    margin-bottom: 8px;
+}
+footer div a{
+    text-indent: -9999px;
+    position: absolute;
+}
+footer div a:first-of-type{
+    background: url("../images/sns_01.png") no-repeat;
+}
+footer div a:last-of-type{
+    background: url("../images/sns_02.png") no-repeat;
+}
+footer p:last-of-type{
+    line-height: 10px;
+}
+footer div p span:not(:last-of-type){
+    box-sizing: border-box;
+    border-right: 1px solid #50514f;
+}
+@media screen and (max-width:767px){
+    header > div h1 a {
+        height: 30px;
+    }
+    header > div input[id="searchIcon"]+label,
+    header > div input[id="menuIcon"]+label {
+        right: 3%;
+    }
+    header > div input[id="searchIcon"]+label span,
+    header > div input[id="menuIcon"]+label span {
+        right: 3%;
+        font-size: 28px;
+    }
+    header > div input[id="searchIcon"]+label{
+        margin-right: 50px;
+    }
+    header > div div.searchPage {
+        height: 30%;
+        top: -30%;
+    }
+    header > div div.searchPage form input:first-of-type {
+        font-size: 16px;
+        line-height: 34px;
+    }
+
+    header > div div.searchPage form input:last-of-type {
+        font-size: 28px;
+    }
+    header > div div.menuPage ul li {
+        width: 40%;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+
+    header > div div.menuPage ul li h3 a {
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    header > div div.menuPage ul li > a {
+        display: block;
+        font-size: 16px;
+        line-height: 36px;
+    }
+
+    header > div div.menuPage ul li > a:hover {
+        color: #FF686B;
+    }
+
+    header > div div.menuPage div {
+        display: none;
+    }
+
+    header > div div.menuPage div img {
+        display: none;
+    }
+
+    header.headerChange {
+        padding: 10px 0 5px;
+        box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    /* header Fin */
+
+    footer {
+        padding: 6% 0 10%;
+    }
+    footer div address,
+    footer div p {
+        font-size: 10px;
+        line-height: 14px;
+    }
+    footer div p:last-of-type {
+        padding-top: 10px;
+    }
+    footer div a{
+        width: 22px;
+        height: 22px;
+        top: 90px;
+    }
+    footer div a:first-of-type {
+        background-size: contain;
+        right: 52%;
+    }
+
+    footer div a:last-of-type{
+        background-size: contain;
+        right: 40%;
+    }
+    footer p:last-of-type{
+        font-size: 10px;
+    }
+    footer div p span:not(:last-of-type){
+        padding-right: 3px;
+    }
+}
+@media screen and (max-width:767px) and (orientation:landscape){
+
+    header > div h1 a {
+        height: 53px;
+    }
+
+    header > div input[id="searchIcon"]+label span,
+    header > div input[id="menuIcon"]+label span {
+        right: 2.5%;
+        padding: 9px 0 0 0;
+        font-size: 36px;
+    }
+
+    header > div input[id="searchIcon"]+label span {
+        margin-right: 20px;
+    }
+
+    header > div div.searchPage {
+        height: 70%;
+        top: -70%;
+    }
+
+    header > div div.searchPage form {
+        top: 60%;
+        transform: translateY(-60%);
+    }
+
+    header > div div.searchPage form input:first-of-type {
+        font-size: 24px;
+        line-height: 44px;
+    }
+
+    header > div div.searchPage form input:last-of-type {
+        font-size: 36px;
+    }
+
+    header > div div.menuPage ul {
+        padding-top: 13%;
+    }
+
+    header > div div.menuPage ul li {
+        width: 30%;
+    }
+
+    header > div div.menuPage ul li h3 a {
+        font-size: 30px;
+    }
+
+    header > div div.menuPage ul li > a {
+        display: none;
+    }
+    header.headerChange {
+        padding: 30px 0 30px;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    header.headerChange > div h1 a {
+        height: 43px;
+        width: 222px;
+        background: url("../images/logo.png") no-repeat;
+        background-size: contain;
+    }
+
+    /* header Fin */
+
+    footer {
+        padding: 6% 0 5%;
+    }
+
+    footer div address,
+    footer div p {
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    footer div address {
+        display: inline-block;
+        font-style: normal;
+    }
+
+    footer div p:last-of-type {
+        padding-top: 13px;
+    }
+
+    footer div a {
+        width: 34px;
+        height: 34px;
+        top: 55px;
+    }
+
+    footer div a:first-of-type {
+        right: 44px;
+    }
+
+    footer div a:last-of-type {
+        right: 0px;
+    }
+
+    footer p:last-of-type {
+        font-size: 12px;
+    }
+
+    footer div p span:not(:last-of-type) {
+        padding-right: 6px;
+    }
+}
+@media screen and (min-width:768px){
+    header > div h1 a {
+        height: 53px;
+    }
+    header > div input[id="searchIcon"]+label,
+    header > div input[id="menuIcon"]+label {
+        right: 2.5%;
+    }
+    header > div input[id="searchIcon"]+label span,
+    header > div input[id="menuIcon"]+label span {
+        right: 2.5%;
+        padding: 9px 0 0 0;
+        font-size: 36px;
+    }
+    header > div input[id="searchIcon"]+label{
+        margin-right: 100px;
+    }
+    header > div div.searchPage {
+        height: 40%;
+        top: -40%;
+    }
+    header > div div.searchPage form input:first-of-type {
+        font-size: 24px;
+        line-height: 44px;
+    }
+
+    header > div div.searchPage form input:last-of-type {
+        font-size: 36px;
+    }
+    header > div div.menuPage ul li > a:hover {
+        color: #FF686B;
+    }
+    header > div div.menuPage div{
+        box-shadow: 7px -10px 17px 0px rgba(0, 0, 0, 0.5) inset;
+        background: #ffcac5;
+        background-size: cover;
+        float: left;
+        height: 100%;
+        width: 50%;
+        padding-top: 8%;
+    }
+    header > div div.menuPage div img{
+        width: 21.6667vw;
+        margin: 0 29%;
+    }
+    header.headerChange {
+        padding: 30px 0 30px;
+        box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    header.headerChange > div h1 a {
+        height: 43px;
+        width: 222px;
+    }
+    /* header Fin */
+
+    footer {
+        padding: 6% 0 5%;
+    }
+    footer div address,
+    footer div p {
+        line-height: 26px;
+    }
+    footer div p:last-of-type {
+        padding-top: 13px;
+    }
+    footer div a{
+        width: 34px;
+        height: 34px;
+    }
+    footer div a:first-of-type {
+        right: 44px;
+    }
+    footer div a:last-of-type {
+        right: 0px;
+    }
+    footer p:last-of-type{
+        font-size: 12px;
+    }
+    footer div p span:not(:last-of-type){
+        padding-right: 6px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1279px){
+    header > div div.menuPage ul {
+        background: url("../images/bg_03.jpg");
+        width: 100%;
+        padding-top: 13%;
+    }
+
+    header > div div.menuPage ul li {
+        width: 30%;
+        margin: 0 auto 20px;
+        text-align: center;
+    }
+    header > div div.menuPage ul li h3 a{
+        font-size: 30px;
+        line-height: 60px;
+    }
+
+    header > div div.menuPage ul li > a {
+        display: block;
+        font-size: 20px;
+        line-height: 50px;
+    }
+
+    header > div div.menuPage div {
+        display: none;
+    }
+
+    header > div div.menuPage div img {
+        display: none;
+    }
+
+    /* header Fin */
+
+    footer div address,
+    footer div p {
+        font-size: 14px;
+    }
+
+    footer div a {
+        top: 12px;
+    }
+}
+@media screen and (min-width:768px) and (max-width:1279px) and (orientation:landscape){
+    header > div div.menuPage ul {
+        background: url("../images/bg_03.jpg");
+        width: 100%;
+        padding-top: 8%;
+    }
+
+    header > div div.menuPage ul li {
+        width: 30%;
+        margin: 0 auto 10px;
+        text-align: center;
+    }
+    header > div div.menuPage ul li h3 a{
+        font-size: 30px;
+        line-height: 60px;
+    }
+
+    header > div div.menuPage ul li > a {
+        display: none;
+        font-size: 20px;
+        line-height: 40px;
+    }
+
+    /* header Fin */
+
+    footer div address,
+    footer div p {
+        font-size: 15px;
+    }
+
+    footer div a {
+        top: 12px;
+    }
+}
+@media screen and (min-width:1280px){
+    header > div div.menuPage ul {
+        background: #fff;
+        width: 50%;
+        padding-top: 8%;
+    }
+
+    header > div div.menuPage ul li {
+        width: 40%;
+        margin: 0 auto 20px
+    }
+
+    header > div div.menuPage ul li h3 a{
+        font-size: 2.0833vw;
+        line-height: 2.6042vw;
+    }
+
+    header > div div.menuPage ul li > a {
+        width: 250px;
+        display: block;
+        font-size: 1.25vw;
+        line-height: 2.2917vw;
+        margin-left: 10px;
+    }
+
+    /* header Fin */
+
+    footer div address,
+    footer div p {
+        font-size: 16px;
+    }
+
+    footer div a {
+        top: 9px;
+    }
+}

@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidanbim</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="plugins/jquery.fitvids.js"></script>
+    <script src="js/index.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <link rel="stylesheet" href="css/import.css">
+</head>
+
+<body>
+    <header>
+        <div>
+            <h1>
+                <a href="index.html">Bidanbim</a>
+            </h1>
+            <input type="checkbox" id="searchIcon">
+            <label for="searchIcon">
+                <span class="material-icons">
+                    search
+                </span>
+            </label>
+            <div class="searchPage">
+                <form>
+                    <input type="text" placeholder="원하시는 항목을 찾아보세요.">
+                    <input type="submit" class="material-icons" value="search">
+                </form>
+            </div>
+
+            <input type="checkbox" id="menuIcon">
+            <label for="menuIcon">
+                <span class="material-icons">
+                    menu
+                </span>
+            </label>
+            <div class="menuPage">
+                <ul>
+                    <li>
+                        <h3><a href="history.html">비단빔</a></h3>
+                        <a href="history.html">연혁</a>
+                    </li>
+                    <li>
+                    <h3><a href="galleyList1.html">화랑</a></h3>
+                        <a href="galleyList1.html">최고의 미</a>
+                        <a href="galleyList2.html">신랑과 신부</a>
+                        <a href="galleyList3.html">혼주</a>
+                        <a href="galleyList4.html">당의와 한복드레스</a>
+                        <a href="galleyList5.html">쾌자와 철릭</a>
+                    </li>
+                    <li>
+                        <h3><a href="mediaList1.html">대중 매체</a></h3>
+                        <a href="mediaList1.html">연예인 협찬</a>
+                        <a href="mediaList2.html">문화 속 비단빔</a>
+                    </li>
+                    <li>
+                        <h3><a href="location.html">약도</a></h3>
+                        <a href="location.html">오시는 길</a>
+                    </li>
+                </ul>
+                <div class="menuImg">
+                    <img src="images/menuBasis.jpg" alt="menuImage">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- header Fin -->
+
+    <a href="#">pageChangeButton</a>
+
+    <!-- pageButton Fin -->
+
+    <section class="locationArea">
+        <div>
+            <h2>강남본점</h2>
+            <address>
+                <a href="#">officeIcon</a><strong>주소:</strong> 서울시 강남구 논현동 102-18번지 지층, 1층, 2층
+            </address>
+            <div>
+                <div id="floating-panel">
+                    <input type="button" value="로드뷰보기" onclick="toggleStreetView();"></input>
+                </div>
+                <div id="map"></div>
+                <script>
+                    var panorama;
+                    var panorama2;
+                    function initMap() {        
+                    var myLatLng = { lat: 37.520251, lng: 127.040075 };
+                    var myLatLng2 = { lat: 37.571103, lng: 126.999444 };
+                      var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 18,
+                        center: myLatLng,
+                        streetViewControl: true
+                      });
+                      var map2 = new google.maps.Map(document.getElementById('map2'), {
+                        zoom: 18,
+                        center: myLatLng2,
+                        streetViewControl: true
+                      });
+
+                        //mapStyle
+                      var styles = [
+                        {
+                            stylers: [
+                              { hue: "#000000" },
+                              { saturation: 0 }
+                            ]
+                        }, {
+                            featureType: "road",
+                            elementType: "geometry", //geometry.fill 지형지물 구조의 채우기, geometry.stroke 지형지물의 스트로크
+                            stylers: [
+                              { lightness: 0 },
+                              { visibility: "simplified" }
+                              //기본 on, off , simplified 가시성은 해당 지형지물에서 일부 스타일 지형지물을 제거
+                            ]
+                        }, {
+                            featureType: "all",
+                            // 지형지물 all : 모든요소 표시, road : 길만 표시
+                            elementType: "labels",
+                            // featureType의 요소에 해당하는 라벨 표시, labels.icon : 지형지물 레이블 내 아이콘만, labels.text : 레이블의 텍스트만 선택, labels.text.fill 레이블의채우기만, label.text.stroke 레이블텍스트의 선만
+                            stylers: [
+                              { visibility: "on" }
+                              // 보여줄거냐 말거냐
+                            ]
+                        }
+                      ];
+            
+                      map.setOptions({ styles: styles });
+            
+                    //marker Set
+                      var marker = new google.maps.Marker({
+                        position: myLatLng,
+                        map: map,
+                        title: '비단빔 강남본점'
+                      });
+                      var marker2 = new google.maps.Marker({
+                        position: myLatLng2,
+                        map: map2,
+                        title: '비단빔 종로지점'
+                      });
+                    //streetView
+                      panorama = map.getStreetView();
+                      panorama.setPosition(myLatLng);
+                      panorama.setPov(/** @type {google.maps.StreetViewPov} */({
+                          heading: 265,
+                          pitch: 0
+                      }));
+                      panorama2 = map2.getStreetView();
+                      panorama2.setPosition(myLatLng2);
+                      panorama2.setPov(/** @type {google.maps.StreetViewPov} */({
+                          heading: 265,
+                          pitch: 0
+                      }));
+            
+                    // To add the marker to the map, call setMap();
+                      marker.setMap(map);
+                      marker2.setMap(map2);
+            
+                    // infoWindow
+                      var contentString1 = '<div id="content">' +
+              '<div id="siteNotice">' +
+              '</div>' +
+              '<h1 id="firstHeading" class="firstHeading">비단빔 강남본점</h1>' +
+              '<div id="bodyContent">' +
+              '<p>서울시 강남구 논현동 102-18번지 지층, 1층, 2층</p>' +
+              '<p>02-516-2080</p>' +          
+              '</div>' +
+              '</div>';
+                    var contentString2 = '<div id="content">' +
+              '<div id="siteNotice">' +
+              '</div>' +
+              '<h1 id="firstHeading" class="firstHeading">비단빔 종로지점</h1>' +
+              '<div id="bodyContent">' +
+              '<p>서울시 종로구 종로4가 7번지 1층, 2층</p>' +
+              '<p>02-744-2080</p>' +          
+              '</div>' +
+              '</div>';
+
+                      var infowindow = new google.maps.InfoWindow({
+                          content: contentString1
+                      });
+                      var infowindow2 = new google.maps.InfoWindow({
+                          content: contentString2
+                      });
+                      marker.addListener('click', function () {
+                          infowindow.open(map, marker);
+                      });
+                      marker2.addListener('click', function () {
+                          infowindow2.open(map2, marker2);
+                      });
+                    }
+
+                    //streetView Toggle
+                    function toggleStreetView() {
+                        var toggle = panorama.getVisible();
+                        if (toggle == false) {
+                            panorama.setVisible(true);
+
+                        } else {
+                            panorama.setVisible(false);
+                        }
+                    }
+                    function toggleStreetView2() {
+                        var toggle = panorama2.getVisible();
+                        if (toggle == false) {
+                            panorama2.setVisible(true);
+                        } else {
+                            panorama2.setVisible(false);
+                        }
+                    }
+                   
+                    
+                </script>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmQex4l1yCciK8SQlSSALIN-d8yNFazt0&signed_in=true&callback=initMap"></script>
+            
+                <!-- googleMAP API -->    
+            </div>
+
+            <div>
+                <h4>주차안내</h4>
+                <p>
+                    학동사거리에서 강남구청역 방향으로 올라오시다보면 우측에 비아인키노&라이프커피와
+                    비단빔 한복 사이 골목으로 들어오시면 바로 좌측에 언덕인 주차장이 있습니다.
+                    주차비는 무료 입니다.
+                </p>
+                <p>
+                    주말 10:00~18:00까지 무료 발렛서비스 해드리고 있습니다.
+                </p>
+            </div>
+            <ul>
+                <li>
+                    <a href="tel:+822-516-2080">callIcon</a>
+                    <p>
+                        <span>전화:</span> 02-516-2080
+                    </p>
+                </li>
+                <li>
+                    <a href="#">faxIon</a>
+                    <p>
+                        <span>팩스:</span> 02-516-2844
+                    </p>
+                </li>
+                <li>
+                    <a href="#">subwayIon</a>
+                    <p>
+                        <span>지하철:</span> 7호선 강남구청역 3-1번출구
+                    </p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 강남본점 Fin -->
+        <div>
+            <h2>종로지점</h2>
+            <address>
+                <a href="#">officeIcon</a><strong>주소:</strong> 서울시 종로구 종로4가 7번지 1층, 2층
+            </address>
+            <div>
+                <div id="floating-panel">
+                    <input type="button" value="로드뷰보기" onclick="toggleStreetView2();"></input>
+                </div>
+                <div id="map2"></div>
+                <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBmQex4l1yCciK8SQlSSALIN-d8yNFazt0&signed_in=true&callback=initMap"></script>
+            
+                <!-- googleMAP API -->    
+            </div>
+
+            <div>
+                <h4>주차안내</h4>
+                <p>
+                    종로4가 사거리와 종로5가 사거리 사이에 국민은행 주차장에 주차하시면 됩니다.
+                </p>
+            </div>
+            <ul>
+                <li>
+                    <a href="tel:+822-744-2080">callIcon</a>
+                    <p>
+                        <span>전화:</span> 02-744-2080
+                    </p>
+                </li>
+                <li>
+                    <a href="#">faxIon</a><span></span>
+                    <p>
+                        <span>팩스:</span> 02-2269-6367
+                    </p>
+                </li>
+                <li>
+                    <a href="#">subwayIon</a>
+                    <p>
+                        <span>지하철:</span> 1호선 종로5가 12, 13번 출구
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- locationArea -->
+
+    <footer>
+        <div>
+            <address>
+                서울시 강남구 선릉로 739(논현동 102-18) 1층
+            </address>
+            <p>
+                <span>대표자 이왕숙</span>
+                <span>사업자등록번호 211-06-51421</span>
+                <span>TEL 02-516-2080</span>
+                <span>FAX 02-516-2844</span>
+            </p>
+            <a href="https://www.instagram.com/bidanbim/" target=_blank>instagram</a>
+            <a href="https://www.facebook.com/bidanbim" target=_blank>facebook</a>
+            <p>COPYRIGHT BY 2018 BIDANBIM CO LTD. ALL RIGHT RESERVED.</p>
+        </div>
+    </footer>
+
+    <!-- footer Fin -->
+</body>
+
+</html>
