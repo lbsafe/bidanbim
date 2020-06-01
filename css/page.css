@@ -1757,6 +1757,9 @@ body > a{
         left: 9.57%; 
         top: 65%;
     }
+    .homeArea .bx-controls > div.bx-controls-auto{
+        padding-top: 5px;
+    }
 
     /* homeArea Fin */
 
